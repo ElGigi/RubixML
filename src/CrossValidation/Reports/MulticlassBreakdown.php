@@ -165,6 +165,6 @@ class MulticlassBreakdown implements ReportGenerator
         return new Report([
             'overall' => $overall,
             'classes' => $table,
-        ]);
+        ], self::class);
     }
 }

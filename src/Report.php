@@ -25,6 +25,12 @@ use Countable;
 class Report implements ArrayAccess, JsonSerializable, IteratorAggregate, Countable, Stringable
 {
     /**
+     * Type of report.
+     *
+     * @var string|null
+     */
+    protected ?string $type;
+    /**
      * The attributes that make up the report.
      *
      * @var mixed[]
@@ -33,9 +39,11 @@ class Report implements ArrayAccess, JsonSerializable, IteratorAggregate, Counta
 
     /**
      * @param mixed[] $attributes
+     * @param string|null $type
      */
-    public function __construct(array $attributes)
+    public function __construct(array $attributes, ?string $type = null)
     {
+        $this->type = $type;
         $this->attributes = $attributes;
     }
 
@@ -145,5 +153,15 @@ class Report implements ArrayAccess, JsonSerializable, IteratorAggregate, Counta
     public function __toString() : string
     {
         return (string) $this->toJSON(true) . PHP_EOL;
+    }
+
+    /**
+     * Return the type of report.
+     *
+     * @return string|null
+     */
+    public function getType(): ?string
+    {
+        return $this->type;
     }
 }

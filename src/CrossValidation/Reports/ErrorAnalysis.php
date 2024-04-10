@@ -95,6 +95,6 @@ class ErrorAnalysis implements ReportGenerator
             'error 75%' => $quantiles[3],
             'error max' => $quantiles[4],
             'cardinality' => count($predictions),
-        ]);
+        ], self::class);
     }
 }

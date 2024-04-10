@@ -797,7 +797,7 @@ class Labeled extends Dataset
             $stats[$label] = $stratum->describe()->toArray();
         }
 
-        return new Report($stats);
+        return new Report($stats, __METHOD__);
     }
 
     /**

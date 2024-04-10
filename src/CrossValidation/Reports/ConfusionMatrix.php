@@ -57,6 +57,6 @@ class ConfusionMatrix implements ReportGenerator
             ++$matrix[$prediction][$labels[$i]];
         }
 
-        return new Report($matrix);
+        return new Report($matrix, self::class);
     }
 }

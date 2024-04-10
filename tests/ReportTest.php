@@ -30,7 +30,7 @@ class ReportTest extends TestCase
             'accuracy' => 0.9,
             'f1_score' => 0.75,
             'cardinality' => 5,
-        ]);
+        ], 'foo');
     }
 
     /**
@@ -80,5 +80,14 @@ class ReportTest extends TestCase
         $this->assertEquals(0.9, $this->results['accuracy']);
         $this->assertEquals(0.75, $this->results['f1_score']);
         $this->assertEquals(5, $this->results['cardinality']);
+    }
+
+    /**
+     * @test
+     */
+    public function getType() : void
+    {
+        $this->assertEquals('foo', $this->results->getType());
+        $this->assertNull((new Report([]))->getType());
     }
 }

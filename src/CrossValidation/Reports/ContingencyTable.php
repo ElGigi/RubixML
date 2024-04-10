@@ -57,6 +57,6 @@ class ContingencyTable implements ReportGenerator
             ++$table[$prediction][$labels[$i]];
         }
 
-        return new Report($table);
+        return new Report($table, self::class);
     }
 }

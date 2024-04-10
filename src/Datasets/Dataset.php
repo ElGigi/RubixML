@@ -422,7 +422,7 @@ abstract class Dataset implements ArrayAccess, IteratorAggregate, Countable
             $stats[] = $description;
         }
 
-        return new Report($stats);
+        return new Report($stats, __METHOD__);
     }
 
     /**

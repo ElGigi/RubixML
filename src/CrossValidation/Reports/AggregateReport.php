@@ -96,6 +96,6 @@ class AggregateReport implements ReportGenerator
             $reports[$name] = $report->generate($predictions, $labels);
         }
 
-        return new Report($reports);
+        return new Report($reports, self::class);
     }
 }
